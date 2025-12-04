@@ -11,7 +11,9 @@ from config import env_config, test_data
 
 @pytest.fixture(scope="function")
 def driver():
-    """Фикстура для запуска браузера Chrome в полноэкранном режиме"""
+    """
+    Фикстура для запуска браузера Chrome в полноэкранном режиме
+    """
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()

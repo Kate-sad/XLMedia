@@ -9,7 +9,7 @@ from config import env_config, test_data
 def api_session():
     """
     Фикстура: создаёт requests.Session и закрывает после теста.
-    Возвращает объект requests.Session.
+    Возвращает объект requests.Session
     """
     session = requests.Session()
     yield session
