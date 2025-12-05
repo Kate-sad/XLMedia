@@ -38,9 +38,9 @@ project-root/
    pip install -r requirements.txt
 
 3. Запуск тестов:
-- Запуск только UI‑тестов: pytest test/test_ui.py --alluredir=allure-results
-- Запуск только API‑тестов: pytest test/test_api.py --alluredir=allure-results
-- Запуск всех тестов: pytest test/ --alluredir=allure-results
+- Запуск только UI‑тестов: python -m pytest test/test_ui.py -v --alluredir=allure-results
+- Запуск только API‑тестов: python -m pytest test/test_api.py -v --alluredir=allure-results
+- Запуск всех тестов: python -m pytest test/ -v --alluredir=allure-results
 
 4. Для генерации отчётов используйте: allure serve allure-results
 

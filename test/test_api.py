@@ -34,7 +34,7 @@ def test_search_products_status_code(api_session: requests.Session) -> None:
 
     encoded_query = urllib.parse.quote(test_data.SEARCH_QUERY)
     headers = {
-        'referer': f'https://xlm.ru/search?search={encoded_query}'
+        'referer': f'{env_config.SEARCH_URL}{encoded_query}'
         }
 
     with allure.step("Отправка запроса на поиск товаров"):
@@ -68,7 +68,7 @@ def test_add_product_to_basket(api_session: requests.Session) -> None:
 
     encoded_query = urllib.parse.quote(test_data.SEARCH_QUERY)
     headers = {
-        'referer': f'https://xlm.ru/search?search={encoded_query}'
+        'referer': f'{env_config.SEARCH_URL}{encoded_query}'
     }
 
     with allure.step("Отправка запроса на добавление товара"):
@@ -102,7 +102,7 @@ def test_remove_product_from_basket(api_session: requests.Session) -> None:
 
     encoded_query = urllib.parse.quote(test_data.SEARCH_QUERY)
     headers = {
-        'referer': f'https://xlm.ru/search?search={encoded_query}'
+        'referer': f'{env_config.SEARCH_URL}{encoded_query}'
     }
 
     with allure.step("Отправка запроса на удаление товара"):
@@ -133,7 +133,7 @@ def test_clear_basket(api_session: requests.Session) -> None:
 
     encoded_query = urllib.parse.quote(test_data.SEARCH_QUERY)
     headers = {
-        'referer': f'https://xlm.ru/search?search={encoded_query}'
+        'referer': f'{env_config.SEARCH_URL}{encoded_query}'
     }
 
     with allure.step("Отправка запроса на очистку корзины"):
@@ -168,7 +168,7 @@ def test_clear_basket_negative(api_session: requests.Session) -> None:
 
     encoded_query = urllib.parse.quote(test_data.SEARCH_QUERY)
     headers = {
-        'referer': f'https://xlm.ru/search?search={encoded_query}'
+        'referer': f'{env_config.SEARCH_URL}{encoded_query}'
     }
 
     with allure.step("Отправка запроса DELETE вместо POST"):
